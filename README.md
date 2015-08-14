@@ -1,5 +1,7 @@
 # Culqi - Java
 
+![Status](https://travis-ci.org/culqi/Culqi-Java.svg?branch=master)
+
 ### Usando el Botón de Pago y JAVA
 
 Este tutorial te ayudará a integrar el Botón de Pago Web de Culqi usando Java
