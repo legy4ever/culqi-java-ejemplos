@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e08bbe5-7e06-42a3-93d1-dfbc3cce7fc4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/culqi.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/culqi/pruebas/controllers/ComercioController.java" afterPath="$PROJECT_DIR$/src/main/java/com/culqi/pruebas/controllers/ComercioController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/culqi-pruebas.iml" afterPath="$PROJECT_DIR$/culqi-pruebas.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="3e08bbe5-7e06-42a3-93d1-dfbc3cce7fc4" name="Default" comment="" />
     <ignored path="culqi-pruebas.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -739,7 +733,7 @@
       <workItem from="1439337456805" duration="1804000" />
       <workItem from="1439408259834" duration="2930000" />
       <workItem from="1439502965772" duration="1231000" />
-      <workItem from="1439578341833" duration="862000" />
+      <workItem from="1439578341833" duration="880000" />
     </task>
     <task id="LOCAL-00110" summary="Comercio demo.">
       <created>1437590472615</created>
@@ -1039,7 +1033,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165602000" />
+    <option name="totallyTimeSpent" value="165620000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
