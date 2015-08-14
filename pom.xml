@@ -27,6 +27,14 @@
     <!-- Guava -->
 
     <dependency>
+        <groupId>com.culqi</groupId>
+        <artifactId>sdk</artifactId>
+        <version>1.0.0</version>
+        <scope>system</scope>
+        <systemPath>${basedir}/lib/culqi.jar</systemPath>
+    </dependency>
+
+    <dependency>
         <groupId>com.google.guava</groupId>
         <artifactId>guava</artifactId>
         <version>${guava.version}</version>
