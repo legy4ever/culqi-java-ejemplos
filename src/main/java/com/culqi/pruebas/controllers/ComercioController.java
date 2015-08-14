@@ -41,9 +41,7 @@ public class ComercioController {
 
     @RequestMapping(value = "/certificacion", method = RequestMethod.GET)
     public String validarVenta(Model model) throws IOException {
-
-        LOGGER.info("Preparando información de venta para enviar a validación.");
-
+        
         Culqi.llaveSecreta = "zzmxZlgIJtKKy0F71DMsZPWnPVzow4S90abBScLDIrk=";
         Culqi.codigoComercio = "testc101";
         Culqi.servidorBase = URLModuloPago;
