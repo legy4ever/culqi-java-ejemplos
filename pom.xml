@@ -27,18 +27,6 @@
 </properties>
 
 <dependencies>
-    <!-- Dependencias de Culqi-->
-    <dependency>
-        <groupId>com.culqi</groupId>
-        <artifactId>sdk</artifactId>
-        <version>0.1.0</version>
-    </dependency>
-
-    <dependency>
-        <groupId>com.culqi</groupId>
-        <artifactId>commons</artifactId>
-        <version>0.1.0</version>
-    </dependency>
     <!-- Guava -->
 
     <dependency>

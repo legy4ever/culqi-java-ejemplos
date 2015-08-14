@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-public class NuevaVentaRestController {
+public class Venta {
 
     @Value("${culqi.url.mod_pago}")
     private String URLModuloPago;
