@@ -20,7 +20,6 @@
 <properties>
     <guava.version>16.0.1</guava.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.version>1.8</java.version>
     <start-class>com.culqi.pruebas.Application</start-class>
 </properties>
 
