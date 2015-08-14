@@ -26,7 +26,7 @@ import com.culqi.sdk.*;
 Así podemos crear una venta nueva.
 
 ```Java
-@RequestMapping(value = "/venta", method = RequestMethod.GET) public String generarVenta(Model model) throws IOException {
+@RequestMapping(value = "/venta", method = RequestMethod.GET) public String generarVenta(Model model) throws IOException {
 
 Culqi.llaveSecreta = "zzmxZlgIJtKKy0F71DMsZPWnPVzow4S90abBScLDIrk=";
 Culqi.codigoComercio = "testc105";
@@ -53,7 +53,24 @@ return "error_response";
 ```
 
 Para anular una venta:
+```Java
+@ResponseBody @RequestMapping(value = "/anular", method = RequestMethod.POST) public String anularVenta(@RequestBody @Valid VentaAnular ventaAnular, HttpServletRequest request) {
 
-@ResponseBody @RequestMapping(value = "/anular", method = RequestMethod.POST) public String anularVenta(@RequestBody @Valid VentaAnular ventaAnular, HttpServletRequest request) {      Culqi.llaveSecreta = "zzmxZlgIJtKKy0F71DMsZPWnPVzow4S90abBScLDIrk=";     Culqi.codigoComercio = "testc101";     Culqi.servidorBase = URLModuloPago;      Map<String, Object> anulacion = Pago.anular(ventaAnular.getId_transaccion());      try {         return new ObjectMapper().writeValueAsString(anulacion);
-     } catch (JsonProcessingException e) {          throw new RuntimeException(e);      }  }
+Culqi.llaveSecreta = "zzmxZlgIJtKKy0F71DMsZPWnPVzow4S90abBScLDIrk=";
+Culqi.codigoComercio = "testc101";
+Culqi.servidorBase = URLModuloPago;
+
+Map<String, Object> anulacion = Pago.anular(ventaAnular.getId_transaccion());
+
+try {
+    return new ObjectMapper().writeValueAsString(anulacion);
+    
+    } catch (JsonProcessingException e) {
+    
+    throw new RuntimeException(e);
+    
+    }
+    
+    }
+```
 
