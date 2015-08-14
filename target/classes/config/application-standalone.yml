@@ -1,0 +1,12 @@
+server:
+    port: 8002
+
+logging:
+    level:
+        com.culqi: DEBUG
+        # org.springframework: WARN
+        org.springframework.web.client: DEBUG
+culqi:
+    url:
+        mod_pago: https://integ-pago.culqi.com
+
