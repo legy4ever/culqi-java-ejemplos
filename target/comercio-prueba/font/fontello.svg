@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2015 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="credit-card" unicode="&#xe800;" d="m729 688q65 0 110-46t46-110l0-364q0-65-46-111t-110-45l-573 0q-65 0-110 45t-46 111l0 364q0 65 46 110t110 46l573 0z m52-520l0 208-677 0 0-208q0-21 15-37t37-15l573 0q21 0 37 15t15 37z m0 313l0 51q0 21-15 37t-37 15l-573 0q-21 0-37-15t-15-37l0-51 677 0z m-208-262q-25 0-25 27t25 26l105 0q25 0 25-26t-25-27l-105 0z" horiz-adv-x="885" />
+<glyph glyph-name="basket" unicode="&#xe801;" d="m950 715q23 0 39-18t14-42l-53-365q-2-18-17-31t-34-12l-590 0 9-53 528 0q22 0 37-16t16-36-16-37-37-15l-572 0q-20 0-35 13t-16 30l-98 582-72 0q-22 0-37 15t-16 37 16 36 37 16l116 0q19 0 34-12t17-32l11-60 719 0z m-60-105l-200 0 0-103 185 0z m-252 0l-157 0 0-103 157 0 0 103z m0-156l-157 0 0-104 157 0 0 104z m-208 156l-182 0 18-105q3 2 8 2l156 0 0 103z m-156-156l17-104 139 0 0 104-156 0z m416-104l164 0 14 104-178 0 0-104z m-416-390q0 78 77 78 79 0 79-78 0-78-79-78-77 0-77 78z m469 0q0 78 77 78 79 0 79-78 0-78-79-78-77 0-77 78z" horiz-adv-x="1003" />
+<glyph glyph-name="cancel" unicode="&#xe802;" d="m452 194q18-18 18-43t-18-43q-18-16-43-16t-43 16l-132 152-132-152q-18-16-43-16t-43 16q-16 18-16 43t16 43l138 156-138 158q-16 18-16 43t16 43q18 16 43 16t43-16l132-152 132 152q18 16 43 16t43-16q18-18 18-43t-18-43l-138-158z" horiz-adv-x="470" />
+<glyph glyph-name="ok-circle" unicode="&#xe803;" d="m500 850q136 0 251-67t182-182 67-251-67-251-182-182-251-67-251 67-182 182-67 251 67 251 182 182 251 67z m-240-447l-54-53q71-71 129-133t81-90l22-26q8 13 22 36t57 85 83 119 95 119 99 104q-18 35-36 35-10-6-32-22t-113-97-211-201z" horiz-adv-x="1000" />
+<glyph glyph-name="ok" unicode="&#xe804;" d="m1179 778q-250-222-600-750l-115-179q-144 180-464 500l107 107 286-250q150 150 279 272t206 187 131 111 77 59l21 14q4 0 11-2t26-19 35-50z" horiz-adv-x="1179" />
+</font>
+</defs>
+</svg>

@@ -1,0 +1,6 @@
+logging:
+    file: culqi/pruebas.log
+
+culqi:
+    url:
+        mod_pago: https://devpago.culqi.com

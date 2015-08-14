@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Checkout | Efe</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<div id="lightbox" class="shadow">
+		<div class="mensaje">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non omnis veritatis nostrum nobis optio eum blanditiis molestiae, aut commodi fuga a voluptas repellendus, ipsum quis mollitia consequatur esse nihil. Consequuntur.</p>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$(".boton").on("click",function(){
+				$("#lightbox").toggleClass("item6");
+			});
+			$("i").on("click",function(){
+				$("#lightbox").removeClass("item6");
+			});
+		});
+	</script>
+</body>
+</html>

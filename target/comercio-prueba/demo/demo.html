@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Efe</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="jquery-1.11.2.min.js"></script>
+</head>
+<body>
+<div id="culqi_checkout"></div>
+
+<div id="lightbox" class="shadow">
+    <div class="mensaje">
+        <i class="icon-cancel"></i>
+			<span class="logo-comercio">
+				<img src="images/logo_efe.png" alt="">
+			</span>
+        <h2>Gracias</h2>
+        <p>Su transacción ha sido exitosa.</p>
+    </div>
+</div>
+<div class="container">
+    <span class="boton"><i class="icon-credit-card"></i> Pagar</span>
+</div>
+<script>
+    $(document).ready(function(){
+        $("span.boton").on("click",function(){
+            $("#lightbox").toggleClass("item6");
+        });
+        $("i.icon-cancel").on("click",function(){
+            $("#lightbox").removeClass("item6");
+        });
+    });
+</script>
+
+<script type="text/javascript">
+
+    function venta()
+
+    {
+        var values = $(this).serialize();
+        var numeroAleatorio = Math.floor((Math.random() * 99999) + 1);
+
+        $.ajax({
+            url: "cifrar",
+            type: "POST",
+            datatype : "application/json",
+            contentType: "application/json",
+            data: JSON.stringify(
+                    {
+                        'llave' : "zzmxZlgIJtKKy0F71DMsZPWnPVzow4S90abBScLDIrk=",
+                        'codigoComercio' : "testc101",
+                        'numero_orden' : numeroAleatorio,
+                        'moneda' : "PEN",
+                        'monto' : "549900",
+                        'descripcion' : "Venta de prueba."
+                    }),
+
+            success: function(data) {
+
+                var text = data.responseText;
+                var obj = JSON.parse(data);
+
+                var url = "http://192.168.1.107:8080/pago/js/web/"+document.getElementById("codigoComercio").value+"/"+obj["cifrado"];
+
+                console.log(url);
+
+                //alert(data.count);
+
+                //console.log(url);
+
+                $.getScript(url);
+
+            },
+            error:function(data){
+
+                // var text = data.responseText;
+                //alert(text);
+            }
+        });
+    }
+
+</script>
+</body>
+</html>
