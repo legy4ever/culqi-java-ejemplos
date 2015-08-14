@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e08bbe5-7e06-42a3-93d1-dfbc3cce7fc4" name="Default" comment="" />
+    <list default="true" id="3e08bbe5-7e06-42a3-93d1-dfbc3cce7fc4" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/culqi-pruebas.iml" afterPath="$PROJECT_DIR$/culqi-pruebas.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="culqi-pruebas.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,10 +59,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ComercioController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ComercioController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/culqi/pruebas/controllers/ComercioController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.13165681">
+            <state vertical-scroll-proportion="0.0">
               <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -77,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5118343">
+              <caret line="72" column="34" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -163,11 +167,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/efe.html.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/culqi/pruebas/controllers/NuevaVentaRestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/culqi/pruebas/controllers/ComercioCertificacionController.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/culqi/pruebas/controllers/Venta.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config/application-standalone.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/config/application-deployed.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/culqi/pruebas/controllers/ComercioController.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -733,7 +737,7 @@
       <workItem from="1439337456805" duration="1804000" />
       <workItem from="1439408259834" duration="2930000" />
       <workItem from="1439502965772" duration="1231000" />
-      <workItem from="1439578341833" duration="880000" />
+      <workItem from="1439578341833" duration="1032000" />
     </task>
     <task id="LOCAL-00110" summary="Comercio demo.">
       <created>1437590472615</created>
@@ -1033,7 +1037,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165620000" />
+    <option name="totallyTimeSpent" value="165772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1173,14 +1177,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1233,11 +1229,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/culqi/pruebas/controllers/ComercioController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.13165681">
+        <state vertical-scroll-proportion="0.0">
           <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5118343">
+          <caret line="72" column="34" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
