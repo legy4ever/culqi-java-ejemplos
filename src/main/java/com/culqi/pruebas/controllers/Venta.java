@@ -2,7 +2,6 @@
 package com.culqi.pruebas.controllers;
 
 import com.culqi.pruebas.domain.*;
-import com.culqi.pruebas.domain.Respuesta;
 import com.culqi.sdk.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

@@ -1,7 +1,0 @@
-logging:
-    file: culqi/pruebas.log
-
-culqi:
-    url:
-        mod_pago: https://integ-pago.culqi.com
-
