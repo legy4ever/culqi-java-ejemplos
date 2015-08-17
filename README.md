@@ -12,10 +12,14 @@ Para comenzar vas a necesitar:
 
 JAVA mayor o igual a la versión X
 
+## Requerimientos 
+
 Instalar manualmente los siguientes JARs:
-La librería Java de Culqi
-Google Gson - http://mvnrepository.com/artifact/com.google.code.gson/gson/2.3.1
-Bouncy Castle Provider - http://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on/1.52
+* [La librería Java de Culqi](www.culqi.com)
+* [Google Gson](http://mvnrepository.com/artifact/com.google.code.gson/gson/2.3.1)
+* [Bouncy Castle Provider](http://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on/1.52)
+
+## Instalación
 
 Importamos la librería de Culqi
 
