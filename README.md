@@ -51,8 +51,8 @@ Diners | 3600 121212 1210 | 04/2018 | 964
 Para empezar debes de configurar la librería en tu proyecto e iniciar las variables con los datos del "Comercio Demo":
 
 ```java
-Culqi.llaveSecreta = "llave_secreta";
-Culqi.codigoComercio = "codigo_comercio";
+Culqi.llaveSecreta = "xdemo";
+Culqi.codigoComercio = "Aq+yGWgYrDK9qWi30yj6+LicpKXxuVqZEGKsu9U4pwE=";
 Culqi.servidorBase = "https://integ-pago.culqi.com";
 ```
 
@@ -148,7 +148,7 @@ La respuesta que obtendrá será una cadena cifrada que contiene un JSON.
 
 ```json
 {"info_venta":"dkladkldlakdmdaaldklakd",
- "codigo_comercio":"testc101",
+ "codigo_comercio":"xdemo",
  "nro_pedido":"testc101",
  "codigo_respuesta":"OK",
  "mensaje_respuesta":"Venta Creada",
@@ -272,8 +272,8 @@ Una vez recibida la respuesta, puedes decifrarla utilizando la librería Java.
 * Ejemplo de descifrado de una respuesta de transacción
 */
 
-Culqi.llaveSecreta = "zzmxZlgIJtKKy0F71DMsZPWnPVzow4S90abBScLDIrk=";
-Culqi.codigoComercio = "testc101";
+Culqi.llaveSecreta = "Aq+yGWgYrDK9qWi30yj6+LicpKXxuVqZEGKsu9U4pwE=";
+Culqi.codigoComercio = "xdemo";
 Culqi.servidorBase = "https://integ-ago.culqi.com";
 
 //Retorna el JSON Descifrado
@@ -339,8 +339,8 @@ Para consultar una venta debes de enviar el token de la transacción (que debes 
 * Ejemplo de Consulta de una transacción
 */
 
-Culqi.llaveSecreta = "zzmxZlgIJtKKy0F71DMsZPWnPVzow4S90abBScLDIrk=";
-Culqi.codigoComercio = "testc101";
+Culqi.llaveSecreta = "Aq+yGWgYrDK9qWi30yj6+LicpKXxuVqZEGKsu9U4pwE=";
+Culqi.codigoComercio = "xdemo";
 Culqi.servidorBase = "https://integ-pago.culqi.com";
 
 //Se envía el token de la transacción
@@ -395,8 +395,8 @@ Para anular una venta debes de enviar el token de la transacción usando la libr
 * Ejemplo de Anulación de una transacción
 */
 
-Culqi.llaveSecreta = "zzmxZlgIJtKKy0F71DMsZPWnPVzow4S90abBScLDIrk=";
-Culqi.codigoComercio = "testc101";
+Culqi.llaveSecreta = "Aq+yGWgYrDK9qWi30yj6+LicpKXxuVqZEGKsu9U4pwE=";
+Culqi.codigoComercio = "xdemo";
 Culqi.servidorBase = "https://integ-pago.culqi.com";
 
 //Se envía el token de la transacción
