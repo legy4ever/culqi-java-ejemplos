@@ -1,7 +1,5 @@
 # Integrando el Botón de Pago Web en una aplicación Java
 
-![Status](https://travis-ci.org/culqi/Culqi-Java.svg?branch=master)
-
 ## Introducción
 Este documento tiene como intención ser una Guía rápida para que el desarrollador pueda integrar rápidamente el Botón de Pago Web de Culqi.
 
