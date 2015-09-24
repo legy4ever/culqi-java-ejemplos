@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="culqi">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/culqi.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

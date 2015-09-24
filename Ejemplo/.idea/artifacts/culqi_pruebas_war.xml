@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="culqi-pruebas:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="comercio-prueba.war">
-      <element id="artifact" artifact-name="culqi-pruebas:war exploded" />
-    </root>
-  </artifact>
-</component>
