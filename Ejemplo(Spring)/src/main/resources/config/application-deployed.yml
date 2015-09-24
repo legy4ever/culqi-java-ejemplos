@@ -3,4 +3,4 @@ logging:
 
 culqi:
     url:
-        mod_pago: https://devpago.culqi.com
+        mod_pago: https://integ-pago.culqi.com

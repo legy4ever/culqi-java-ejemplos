@@ -1,0 +1,51 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="comercio-prueba:war exploded">
+    <output-path>$PROJECT_DIR$/target/comercio-prueba</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="comercio-prueba" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.culqi:culqi-java:1.0.0" />
+          <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.3.1" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk15on:1.52" />
+          <element id="library" level="project" name="Maven: com.culqi:commons:0.1.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.5" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.5" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.5" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:16.0.1" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-web:1.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter:1.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot:1.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-logging:1.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.11" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.11" />
+          <element id="library" level="project" name="Maven: org.slf4j:jul-to-slf4j:1.7.11" />
+          <element id="library" level="project" name="Maven: org.slf4j:log4j-over-slf4j:1.7.11" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.1.3" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.1.3" />
+          <element id="library" level="project" name="Maven: org.yaml:snakeyaml:1.14" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-validator:5.1.3.Final" />
+          <element id="library" level="project" name="Maven: javax.validation:validation-api:1.1.0.Final" />
+          <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.1.3.GA" />
+          <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.0.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:4.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.1.6.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/comercio-prueba/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="comercio-prueba/web/Web" />
+    </root>
+  </artifact>
+</component>

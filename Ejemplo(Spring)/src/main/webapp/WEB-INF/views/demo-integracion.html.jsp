@@ -9,9 +9,6 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Comercio Certificacion</title>
-    <link rel="icon"
-          type="image/png"
-          href="/images/favicon-16x16.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://integ-pago.culqi.com/culqi.js"></script>
 
