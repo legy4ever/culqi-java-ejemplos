@@ -87,8 +87,9 @@ País | PARAM_COD_PAIS | Código del País del cliente. Ej. Perú : PE | A | 2 c
 Ciudad | PARAM_CIUDAD | Ciudad del cliente. | A | 30 caracteres
 Dirección | PARAM_DIRECCION | Dirección del cliente. | AN | 80 caracteres
 Teléfono | PARAM_NUM_TEL | Número de teléfono del cliente. | N | 20 caracteres
-Nombre | PARAM_NUM_TEL | Número de teléfono del cliente. | N | 20 caracteres
-
+ID Usuario | id_usuario_comercio | Identificador del usuario. | N | 20 caracteres
+Nombres | nombres | Nombres del cliente. | A | 30 caracteres
+Apellidos | apellidos | Apellidos del cliente. | A | 30 caracteres
 
 `AN = Alfanumérico` 
 `N = Numérico` 
@@ -124,6 +125,9 @@ params.put(Pago.PARAM_COD_PAIS, "PE");
 params.put(Pago.PARAM_CIUDAD, "Lima");
 params.put(Pago.PARAM_DIRECCION, "Avenida Lima Nº123432");
 params.put(Pago.PARAM_NUM_TEL, "016663420");
+params.put("id_usuario_comercio", "016663420");
+params.put("nombres", "William Oswaldo");
+params.put("apellidos", "Muro Valencia");
 
 params.put(Pago.PARAM_VIGENCIA, 60);
 
@@ -140,19 +144,27 @@ System.out.println("Número de pedido" + respuesta("nro_pedido"));
 //Código de respuesta
 System.out.println("Código Respuesta" + respuesta("codigo_respuesta"));
 
+//Tipo de respuesta
+System.out.println("Código Respuesta" + respuesta("tipo_respuesta"));
+
 //Mensaje de respuesta
 System.out.println("Mensaje Respuesta" + respuesta("mensaje_respuesta"));
+
+//Mensaje de respuesta usuario
+System.out.println("Mensaje Respuesta" + respuesta("mensaje_respuesta_usuario"));
 ```
 
 La respuesta que obtendrá será una cadena cifrada que contiene un JSON.
 
 ```json
 {"info_venta":"dkladkldlakdmdaaldklakd",
- "codigo_comercio":"xdemo",
+ "codigo_comercio":"testc101",
  "nro_pedido":"testc101",
- "codigo_respuesta":"OK",
- "mensaje_respuesta":"Venta Creada",
- "token":"PqHLeGVGBniY7i4XN1N94QIx4MyHHYZhztE"}
+ "tipo_respuesta":"validacion_exitosa",
+ "codigo_respuesta":"100",
+ "mensaje_respuesta":"Transacción creada exitosamente.",
+ "mensaje_respuesta_usuario":"Transacción creada exitosamente.",
+ "ticket":"PqHLeGVGBniY7i4XN1N94QIx4MyHHYZhztE"}
 ```
 
 #### Parámetros de respuesta
@@ -162,15 +174,17 @@ Nombre | Parámetro | Descripción | Tipo
 Informacion de Venta | PARAM_INFO_VENTA | La información de la venta que se usa para configurar el botón de pago de Culqi. | AN
 Código de Comercio | codigo_comercio | Código del comercio en Culqi. | AN
 Número de Pedido | nro_pedido | Número de orden de la venta. | AN
+Tipo de Respuesta | tipo_respuesta | Tipo de respuesta: "validacion_exitosa", "error_procesamiento", "parametro_invalido" | AN
 Código de Respuesta | codigo_respuesta | Código de la respuesta. | AN
-Mensaje de Respuesta | mensaje_respuesta | Mensaje de respuesta. | AN
-Token | token | Token de la transacción. | AN
+Mensaje de Respuesta | mensaje_respuesta | Mensaje de respuesta al desarrollador. | AN
+Mensaje de Respuesta Usuario | mensaje_respuesta_usuario | Mensaje de respuesta que se recomienda mostrar al usuario. | AN
+Ticket | ticket | Ticket de la transacción. | AN
 
 `AN = Alfanumérico` 
 
 > El parámetro "PARAM_INFO_VENTA" contenido en la respuesta del servidor de Culqi, debe de ser usado para configurar el Botón de Pago Web en la página del comercio como siguiente paso, ya que asi se inicia la solicitud de los datos de la tarjeta al cliente.
 
-> Es importante que almacenes estos datos, ya que el parámetro "Token" lo usarás para otras operaciones.
+> Es importante que almacenes estos datos, ya que el parámetro "Ticket" lo usarás para otras operaciones.
 
 ### Procesando una Venta
 
@@ -180,7 +194,7 @@ Para empezar, agrega el siguiente código en JavaScript en la página web donde 
 
 Usar una copia local no está soportado, y puede resultar en errores visibles por el usuario.
 
-Esta integración te permite crear un botón customizado y pasar un token de Culqi a un callback (Función `Culqi()`) en Javacript. Puedes usar cualquier elemento HTML o evento JavaScript para abrir el formulario de pagos, y es independiente del lenguaje de programación que uses en tu backend.
+Esta integración te permite crear un botón customizado y pasar la respuesta de venta de Culqi a un callback (Función `Culqi()`) en Javacript. Puedes usar cualquier elemento HTML o evento JavaScript para abrir el formulario de pagos, y es independiente del lenguaje de programación que uses en tu backend.
 
 > Puedes usar Culqi.js de la siguiente manera usando Jquery.
 
@@ -192,7 +206,7 @@ Esta integración te permite crear un botón customizado y pasar un token de Cul
 <script>
 
 //El código del comercio
-checkout.codigo_comercio = "xdemo";
+checkout.codigo_comercio = "demo";
 
 //La información de la venta
 checkout.informacion_venta = "PARAM_INFO_VENTA";
@@ -208,6 +222,7 @@ e.preventDefault();
 });
 
 //Esta función es llamada al terminar el proceso de pago.
+//Debe de ser usada siempre, para poder obtener la respuesta.
 function culqi (checkout) {
 
 //Aquí recibes la respuesta del formulario de pago.
@@ -233,7 +248,7 @@ Es muy importante que entiendas que la variable `codigo_comercio` se encarga de 
 En este punto, debes visualizar el formulario de pago de Culqi. Luego que el cliente ingrese los datos de la tarjeta y se procese la venta, obtendrás como respuesta una cadena de texto, que puedes leer usando la variable `checkout.respuesta` que lo encuentras en el ejemplo de Javascript que se mostró previamente. Este contiene un JSON cifrado y se imprime en el log del navegador web. 
 
 <aside class="error">
-Es de suma importancia que envíes el contenido de la variable "checkout.respuesta" a tus servidores para decrifrarlo usando la librería "culqi.jar", ya que la llave no debe ser usada en el navegador web por tu seguridad como comercio.</aside>
+Es de suma importancia que envíes el contenido de la variable "checkout.respuesta" a tus servidores para decrifrarlo usando la librería "culqi.php", ya que la llave no debe ser usada en el navegador web por tu seguridad como comercio.</aside>
 
 #### Enviando la respuesta a tu servidor
 
@@ -250,11 +265,11 @@ $.ajax({
                     }),
             success: function(data){
                 var obj = JSON.parse(data);
-                var codigo_respuesta_venta = obj["codigo_respuesta"];
-                if (codigo_respuesta_venta == "OK") {
+                var tipo_respuesta_venta = obj["tipo_respuesta"];
+                if (tipo_respuesta_venta == "venta_exitosa") {
                     checkout.cerrar();
                 } else {
-                    // Brindale un mensaje amigable al cliente (no uses el mensaje de Culqi) e invitalo a reintentarlo
+                    // Brindale un mensaje amigable al cliente (Puedes usar el mensaje que Culqi recomienda o usar uno tuyo) e invitalo a reintentar la compra.
                     checkout.cerrar();
                 }
             },
