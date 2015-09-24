@@ -90,6 +90,7 @@ Teléfono | PARAM_NUM_TEL | Número de teléfono del cliente. | N | 20 caractere
 ID Usuario | id_usuario_comercio | Identificador del usuario. | AN | 30 caracteres
 Nombres | nombres | Nombres del cliente. | A | 30 caracteres
 Apellidos | apellidos | Apellidos del cliente. | A | 30 caracteres
+Correo Electrónico | correo_electronico | Dirección del correo electrónico del cliente. | AN | 120 caracteres
 
 `AN = Alfanumérico` 
 `N = Numérico` 
@@ -128,6 +129,7 @@ params.put(Pago.PARAM_NUM_TEL, "016663420");
 params.put("id_usuario_comercio", "016663420");
 params.put("nombres", "William Oswaldo");
 params.put("apellidos", "Muro Valencia");
+params.put("correo_electronico", "wmuro@me.com");
 
 params.put(Pago.PARAM_VIGENCIA, 60);
 
