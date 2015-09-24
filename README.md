@@ -87,6 +87,8 @@ País | PARAM_COD_PAIS | Código del País del cliente. Ej. Perú : PE | A | 2 c
 Ciudad | PARAM_CIUDAD | Ciudad del cliente. | A | 30 caracteres
 Dirección | PARAM_DIRECCION | Dirección del cliente. | AN | 80 caracteres
 Teléfono | PARAM_NUM_TEL | Número de teléfono del cliente. | N | 20 caracteres
+Nombre | PARAM_NUM_TEL | Número de teléfono del cliente. | N | 20 caracteres
+
 
 `AN = Alfanumérico` 
 `N = Numérico` 
