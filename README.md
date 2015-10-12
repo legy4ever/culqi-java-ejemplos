@@ -77,20 +77,22 @@ Para crear una nueva venta deberá configurar la información de la misma, media
 
 #### Parámetros de envío obligatorios
 
-Nombre | Parámetro | Descripción | Tipo | Tamaño Máximo
---------- | --------- | ------- | ----------- | -----------
-Número de Pedido | PARAM_NUM_PEDIDO | Número de pedido de la venta. | AN | 100 caracteres
-Moneda | PARAM_MONEDA | Código de la Moneda de la venta. Ej: Nuevos Soles: PEN , Dólares: USD | N | 3 caracteres
-Monto | PARAM_MONTO | Monto de la venta, sin punto decimal Ej: 100.25 sería 10025 | N | 7 caracteres
-Descripción | PARAM_DESCRIPCION | Breve descripción del producto o servicio brindado. | AN | 120 caracteres
-País | PARAM_COD_PAIS | Código del País del cliente. Ej. Perú : PE | A | 2 caracteres
-Ciudad | PARAM_CIUDAD | Ciudad del cliente. | A | 30 caracteres
-Dirección | PARAM_DIRECCION | Dirección del cliente. | AN | 80 caracteres
-Teléfono | PARAM_NUM_TEL | Número de teléfono del cliente. | N | 20 caracteres
-ID Usuario | id_usuario_comercio | Identificador del usuario. | AN | 30 caracteres
-Nombres | nombres | Nombres del cliente. | A | 30 caracteres
-Apellidos | apellidos | Apellidos del cliente. | A | 30 caracteres
-Correo Electrónico | correo_electronico | Dirección del correo electrónico del cliente. | AN | 120 caracteres
+#### Parámetros de envío obligatorios
+
+Nombre | Parámetro | Descripción | Tipo | Tamaño Mínimo| Tamaño Máximo
+--------- | --------- | ------- | ----------- | ----------- | -----------
+Número de Pedido | PARAM_NUM_PEDIDO | Número de pedido de la venta. ***Debe ser único por cada venta.*** | AN | 1 caracteres | 33 caracteres
+Moneda | PARAM_MONEDA | Código [ISO-4217](https://es.wikipedia.org/wiki/ISO_4217) de la Moneda de la venta . Ej: Nuevos Soles: PEN , Dólares: USD | N | 3 caracteres | 3 caracteres
+Monto | PARAM_MONTO | Monto de la venta, sin punto decimal Ej: 100.25 sería 10025 | N | 3 caracteres | 9 caracteres
+Descripción | PARAM_DESCRIPCION | Breve descripción del producto o servicio brindado. | AN | 5 caracteres | 80 caracteres
+Correo Electrónico | correo_electronico | Dirección del correo electrónico del cliente. | AN | 5 caracteres | 50 caracteres
+País | PARAM_COD_PAIS | Código [ISO-3166-1 Alfa 2](https://es.wikipedia.org/wiki/ISO_3166-1) del País del cliente. Ej. Perú : PE | A | 2 caracteres | 2 caracteres
+Ciudad | PARAM_CIUDAD | Ciudad del cliente. | A | 2 caracteres | 30 caracteres
+Dirección | PARAM_DIRECCION | Dirección del cliente. | AN | 5 caracteres | 100 caracteres
+Teléfono | PARAM_NUM_TEL | Número de teléfono del cliente. | N | 5 caracteres  | 15 caracteres
+ID Usuario | id_usuario_comercio | Identificador del usuario. | N | 2 caracteres | 15 caracteres
+Nombres | nombres | Nombres del cliente. | A | 2 caracteres | 50 caracteres
+Apellidos | apellidos | Apellidos del cliente. | A | 2 caracteres | 50 caracteres
 
 `AN = Alfanumérico` 
 `N = Numérico` 
