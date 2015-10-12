@@ -141,13 +141,10 @@ String informacion_venta = (String)respuesta.get(Pago.PARAM_INFO_VENTA);
 System.out.println("Código Comercio" + respuesta("codigo_comercio"));
 
 //Número de pedido
-System.out.println("Número de pedido" + respuesta("nro_pedido"));
+System.out.println("Número de pedido" + respuesta("numero_pedido"));
 
 //Código de respuesta
 System.out.println("Código Respuesta" + respuesta("codigo_respuesta"));
-
-//Tipo de respuesta
-System.out.println("Código Respuesta" + respuesta("tipo_respuesta"));
 
 //Mensaje de respuesta
 System.out.println("Mensaje Respuesta" + respuesta("mensaje_respuesta"));
@@ -161,11 +158,9 @@ La respuesta que obtendrá será una cadena cifrada que contiene un JSON.
 ```json
 {"info_venta":"dkladkldlakdmdaaldklakd",
 "codigo_comercio":"testc101",
-"nro_pedido":"testc101",
-"tipo_respuesta":"validacion_exitosa",
-"codigo_respuesta":"100",
+"numero_pedido":"testc101",
+"codigo_respuesta":"REG0000",
 "mensaje_respuesta":"Transacción creada exitosamente.",
-"mensaje_respuesta_usuario":"Transacción creada exitosamente.",
 "ticket":"PqHLeGVGBniY7i4XN1N94QIx4MyHHYZhztE"}
 ```
 
@@ -175,8 +170,7 @@ Nombre | Parámetro | Descripción | Tipo
 --------- | --------- | ------- | -----------
 Informacion de Venta | PARAM_INFO_VENTA | La información de la venta que se usa para configurar el botón de pago de Culqi. | AN
 Código de Comercio | codigo_comercio | Código del comercio en Culqi. | AN
-Número de Pedido | nro_pedido | Número de orden de la venta. | AN
-Tipo de Respuesta | tipo_respuesta | Tipo de respuesta: "validacion_exitosa", "error_procesamiento", "parametro_invalido" | AN
+Número de Pedido | numero_pedido | Número de pedido de la venta. | AN
 Código de Respuesta | codigo_respuesta | Código de la respuesta. | AN
 Mensaje de Respuesta | mensaje_respuesta | Mensaje de respuesta al desarrollador. | AN
 Mensaje de Respuesta Usuario | mensaje_respuesta_usuario | Mensaje de respuesta que se recomienda mostrar al usuario. | AN
@@ -267,8 +261,8 @@ data: JSON.stringify(
 }),
 success: function(data){
 var obj = JSON.parse(data);
-var tipo_respuesta_venta = obj["tipo_respuesta"];
-if (tipo_respuesta_venta == "venta_exitosa") {
+var respuesta_venta = obj["codigo_respuesta"];
+if (respuesta_venta == "AUT0000") {
 checkout.cerrar();
 } else {
 // Brindale un mensaje amigable al cliente (Puedes usar el mensaje que Culqi recomienda o usar uno tuyo) e invitalo a reintentar la compra.
@@ -300,13 +294,16 @@ Map<String, Object> respuesta = Culqi.decifrar("checkout.respuesta");
 System.out.println("Código Comercio" + respuesta("codigo_comercio"));
 
 //Número de pedido
-System.out.println("Número de pedido" + respuesta("nro_pedido"));
+System.out.println("Número de pedido" + respuesta("numero_pedido"));
 
 //Código de respuesta
 System.out.println("Código Respuesta" + respuesta("codigo_respuesta"));
 
 //Mensaje de respuesta
 System.out.println("Mensaje Respuesta" + respuesta("mensaje_respuesta"));
+
+//Mensaje de respuesta
+System.out.println("Mensaje Respuesta" + respuesta("mensaje_respuesta_usuario"));
 
 //ID de la Transacción
 System.out.println("ID Transacción" + respuesta("id_transaccion"));
@@ -333,9 +330,10 @@ Obtendrás un JSON que contendrá los siguientes parámetros:
 Nombre | Parámetro | Descripción | Tipo
 --------- | ------- | ----------- | -----------
 Código de Comercio | codigo_comercio | Código del comercio en Culqi. | AN
-Número de Pedido | nro_pedido | Número de orden de la venta. | AN
+Número de Pedido | numero_pedido | Número de pedidode la venta. | AN
 Código de Respuesta | codigo_respuesta | Código de la respuesta. | AN
 Mensaje de Respuesta | mensaje_respuesta | Mensaje de respuesta. | AN
+Mensaje de Respuesta Cliente| mensaje_respuesta_usuario | Mensaje de respuesta recomendado para ale comprador. | AN
 ID Transacción | id_transaccion | ID de la transacción. | AN
 Código Referencia | codigo_referencia | Código de referencia de la transacción. | AN
 Código Autorización | codigo_autorizacion | Código de autorización de la transacción. | AN
@@ -349,7 +347,7 @@ País Tarjeta | pais_tarjeta | País de origen de la tarjeta usada para realizar
 
 ## Operación de Consulta de una venta
 
-Para consultar una venta debes de enviar el token de la transacción (que debes haber guardado) usando la librería de Culqi.
+Para consultar una venta debes de enviar el ticket de la transacción (que debes haber guardado) usando la librería de Culqi.
 
 ```java
 /**
@@ -360,8 +358,8 @@ Culqi.llaveSecreta = "JlhLlpOB5s1aS6upiioJkmdQ0OYZ6HLS2+/o4iYO2MQ=
 Culqi.codigoComercio = "demo";
 Culqi.servidorBase = "https://integ-pago.culqi.com";
 
-//Se envía el token de la transacción
-Map<String, Object> consulta = Pago.consultar("token");
+//Se envía el ticket de la transacción
+Map<String, Object> consulta = Pago.consultar("ticket");
 
 //Y se obtiene como respuesta:
 
@@ -369,10 +367,10 @@ Map<String, Object> consulta = Pago.consultar("token");
 System.out.println("Código Comercio" + consulta.get("codigo_comercio"));
 
 //Número de Pedido
-System.out.println("Número de pedido" + consulta.get("nro_pedido"));
+System.out.println("Número de pedido" + consulta.get("numero_pedido"));
 
-//Token de la transacción
-System.out.println("Token" + consulta.get("token"));
+//Ticket de la transacción
+System.out.println("Ticket" + consulta.get("ticket"));
 
 //Estado de la transacción
 System.out.println("Estado de la transacción" + consulta.get("estado_transaccion"));
@@ -389,7 +387,7 @@ System.out.println("Mensaje de Respuesta" + consulta.get("mensaje_respuesta"));
 
 Nombre | Parámetro| Descripción | Tipo 
 --------- | ----------- | ----------- | -----------
-Token | token | El código de la transacción que quieres consultar. | AN
+Ticket | ticket | El código de la transacción que quieres consultar. | AN
 
 
 ### Parámetros de respuesta
@@ -397,15 +395,15 @@ Token | token | El código de la transacción que quieres consultar. | AN
 Nombre | Parámetro| Descripción | Tipo 
 --------- | --------- | ----------- | -----------
 Código de Comercio | codigo_comercio | El código del comercio en Culqi. | AN
-Número de Pedido | nro_pedido | El número de orden de tu venta. | AN
-Token | token | El código de la transacción. | AN
+Número de Pedido | numero_pedido | El número de pedido de tu venta. | AN
+Ticket | ticket | El ticket de la transacción. | AN
 Estado de Transacción | estado_transaccion | El estado de la transacción. | AN
 Código de Respuesta | codigo_respuesta | El código de la respuesta. | AN
 Mensaje de Respuesta | mensaje_respuesta | El mensaje de respuesta. | AN
 
 ## Operación de Anulación de una venta
 
-Para anular una venta debes de enviar el token de la transacción usando la librería de Culqi.
+Para anular una venta debes de enviar el ticket de la transacción usando la librería de Culqi.
 
 ```java
 /**
@@ -416,8 +414,8 @@ Culqi.llaveSecreta = "JlhLlpOB5s1aS6upiioJkmdQ0OYZ6HLS2+/o4iYO2MQ=
 Culqi.codigoComercio = "demo";
 Culqi.servidorBase = "https://integ-pago.culqi.com";
 
-//Se envía el token de la transacción
-Map<String, Object> anulacion = Pago.anular("token");
+//Se envía el ticket de la transacción
+Map<String, Object> anulacion = Pago.anular("ticket");
 
 //Y se obtiene como respuesta:
 
@@ -425,10 +423,10 @@ Map<String, Object> anulacion = Pago.anular("token");
 System.out.println("Código Comercio" + anulacion.get("codigo_comercio"));
 
 //Número de Pedido
-System.out.println("Número de pedido" + anulacion.get("nro_pedido"));
+System.out.println("Número de pedido" + anulacion.get("numero_pedido"));
 
-//Token de la transacción
-System.out.println("Token" + anulacion.get("token"));
+//Ticket de la transacción
+System.out.println("Ticket" + anulacion.get("ticket"));
 
 //Código de respuesta
 System.out.println("Código de Respuesta" + anulacion.get("codigo_respuesta"));
@@ -441,7 +439,7 @@ System.out.println("Mensaje de Respuesta" + anulacion.get("mensaje_respuesta"));
 
 Parámetro | Tipo | Descripción
 --------- | ----------- | -----------
-token | AN | El código de la transacción que quieres anular.
+ticket | AN | El código de la transacción que quieres anular.
 
 
 ### Parámetros de respuesta
@@ -449,8 +447,8 @@ token | AN | El código de la transacción que quieres anular.
 Parámetro | Tipo | Descripción
 --------- | ----------- | -----------
 codigo_comercio | AN | El código del comercio en Culqi.
-nro_pedido | AN | El número de orden de tu venta.
-token | AN | El código de la transacción.
+numero_pedido | AN | El número de pedido de tu venta.
+ticket | AN | El código de la transacción.
 codigo_respuesta | AN | El código de la respuesta.
 mensaje_respuesta | AN | El mensaje de respuesta.
 
