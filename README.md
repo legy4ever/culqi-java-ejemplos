@@ -4,12 +4,12 @@
 Este documento tiene como intención ser una Guía rápida para que el desarrollador pueda integrar rápidamente el Botón de Pago Web de Culqi.
 
 Para realizar una operación de autorización, se debe realizar 2 pasos: 
-   - Crear un Venta --> se validará los datos del comercio y de la compra.
-   - Procesar la Venta --> se solicitará los datos de la tarjeta y se procesará con la marca correspondiente.
+- Crear un Venta --> se validará los datos del comercio y de la compra.
+- Procesar la Venta --> se solicitará los datos de la tarjeta y se procesará con la marca correspondiente.
 
 Adicionalmente, se podrá realizar las siguientes operaciones:
-   - Consultar una Venta --> obtendrás el estado de la venta y sus datos.
-   - Anular una Venta --> se procesará la anulación siempre y cuando la venta esté autorizada.
+- Consultar una Venta --> obtendrás el estado de la venta y sus datos.
+- Anular una Venta --> se procesará la anulación siempre y cuando la venta esté autorizada.
 
 ## Requerimientos
 
@@ -29,8 +29,8 @@ import com.culqi.*;
 
 Para facilitarle la implementación a nuestro Entorno de Integración, hemos creado un comercio de prueba denominado "Comercio Demo", el cual considera el logotipo de Culqi, asi como los siguientes datos que deberás utilizar en los próximos pasos.
 
-  * Código de comercio: **demo**
-  * Llave del comercio: **JlhLlpOB5s1aS6upiioJkmdQ0OYZ6HLS2+/o4iYO2MQ=**
+* Código de comercio: **demo**
+* Llave del comercio: **JlhLlpOB5s1aS6upiioJkmdQ0OYZ6HLS2+/o4iYO2MQ=**
 
 Te brindamos algunas tarjetas de diferentes marcas que podrás utilizar una vez que te integres mediante del Botón de Pago Web:
 
@@ -63,8 +63,8 @@ Parámetro | Descripción
 llaveSecreta | Llave secreta del comercio
 codigoComercio | Código del comercio asignado por Culqi.
 servidorBase | URL de Culqi a la que te conectarás. 
- | `Entorno de Integración la URL es: https://integ-pago.culqi.com` 
- | `Entorno de Producción: la URL es: https://pago.culqi.com`
+| `Entorno de Integración la URL es: https://integ-pago.culqi.com` 
+| `Entorno de Producción: la URL es: https://pago.culqi.com`
 
 
 ## Operación de Autorización
@@ -160,13 +160,13 @@ La respuesta que obtendrá será una cadena cifrada que contiene un JSON.
 
 ```json
 {"info_venta":"dkladkldlakdmdaaldklakd",
- "codigo_comercio":"testc101",
- "nro_pedido":"testc101",
- "tipo_respuesta":"validacion_exitosa",
- "codigo_respuesta":"100",
- "mensaje_respuesta":"Transacción creada exitosamente.",
- "mensaje_respuesta_usuario":"Transacción creada exitosamente.",
- "ticket":"PqHLeGVGBniY7i4XN1N94QIx4MyHHYZhztE"}
+"codigo_comercio":"testc101",
+"nro_pedido":"testc101",
+"tipo_respuesta":"validacion_exitosa",
+"codigo_respuesta":"100",
+"mensaje_respuesta":"Transacción creada exitosamente.",
+"mensaje_respuesta_usuario":"Transacción creada exitosamente.",
+"ticket":"PqHLeGVGBniY7i4XN1N94QIx4MyHHYZhztE"}
 ```
 
 #### Parámetros de respuesta
@@ -258,26 +258,26 @@ Una vez que obtengas la respuesta de Culqi en tu página web es necesario que la
 
 ```javascript
 $.ajax({
-            url: "/respuesta",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify(
-                    {
-                        'respuesta' : checkout.respuesta
-                    }),
-            success: function(data){
-                var obj = JSON.parse(data);
-                var tipo_respuesta_venta = obj["tipo_respuesta"];
-                if (tipo_respuesta_venta == "venta_exitosa") {
-                    checkout.cerrar();
-                } else {
-                    // Brindale un mensaje amigable al cliente (Puedes usar el mensaje que Culqi recomienda o usar uno tuyo) e invitalo a reintentar la compra.
-                    checkout.cerrar();
-                }
-            },
-            error:function( ){
-            }
-        });
+url: "/respuesta",
+type: "POST",
+contentType: "application/json",
+data: JSON.stringify(
+{
+'respuesta' : checkout.respuesta
+}),
+success: function(data){
+var obj = JSON.parse(data);
+var tipo_respuesta_venta = obj["tipo_respuesta"];
+if (tipo_respuesta_venta == "venta_exitosa") {
+checkout.cerrar();
+} else {
+// Brindale un mensaje amigable al cliente (Puedes usar el mensaje que Culqi recomienda o usar uno tuyo) e invitalo a reintentar la compra.
+checkout.cerrar();
+}
+},
+error:function( ){
+}
+});
 ```
 
 #### Decrifrando la respuesta
