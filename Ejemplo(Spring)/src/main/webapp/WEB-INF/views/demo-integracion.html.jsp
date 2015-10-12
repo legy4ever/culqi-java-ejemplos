@@ -276,11 +276,11 @@
 
                 var obj = JSON.parse(data);
 
-                var tipo_respuesta_venta = obj["tipo_respuesta"];
+                var tipo_respuesta_venta = obj["codigo_respuesta"];
 
                 console.log(tipo_respuesta_venta);
 
-                if (tipo_respuesta_venta == "venta_exitosa") {
+                if (tipo_respuesta_venta == "AUT0000") {
                     //checkout.autorizado();
                     checkout.cerrar();
 
