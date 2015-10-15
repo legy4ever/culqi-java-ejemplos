@@ -147,11 +147,7 @@
     </tr>
     <tr>
         <td>Número de pedido</td>
-        <td><p id="nro_pedido"></p></td>
-    </tr>
-    <tr>
-        <td>Respuesta</td>
-        <td><p id="tipo_respuesta"></p></td>
+        <td><p id="numero_pedido"></p></td>
     </tr>
     <tr>
         <td>Código de respuesta</td>
@@ -276,20 +272,17 @@
 
                 var obj = JSON.parse(data);
 
-                var tipo_respuesta_venta = obj["codigo_respuesta"];
+                var respuesta_venta = obj["codigo_respuesta"];
 
-                console.log(tipo_respuesta_venta);
+                console.log(respuesta_venta);
 
-                if (tipo_respuesta_venta == "AUT0000") {
+                if (tipo_respuesta_venta == "venta_exitosa") {
                     //checkout.autorizado();
-                    checkout.cerrar();
-
                     token = obj["ticket"];
 
                     document.getElementById("codigo_comercio").innerHTML = obj["codigo_comercio"];
-                    document.getElementById("nro_pedido").innerHTML = obj["nro_pedido"];
+                    document.getElementById("nro_pedido").innerHTML = obj["numero_pedido"];
 
-                    document.getElementById("tipo_respuesta").innerHTML = obj["tipo_respuesta"];
                     document.getElementById("codigo_respuesta").innerHTML = obj["codigo_respuesta"];
                     document.getElementById("mensaje_respuesta").innerHTML = obj["mensaje_respuesta"];
                     document.getElementById("mensaje_respuesta_usuario").innerHTML = obj["mensaje_respuesta_usuario"];
@@ -313,15 +306,14 @@
 
                     $("#btn_anular").show();
 
+                    checkout.cerrar();
+
 
                 } else {
 
-                    checkout.cerrar();
-
                     document.getElementById("codigo_comercio").innerHTML = obj["codigo_comercio"];
-                    document.getElementById("nro_pedido").innerHTML = obj["nro_pedido"];
+                    document.getElementById("nro_pedido").innerHTML = obj["numero_pedido"];
 
-                    document.getElementById("tipo_respuesta").innerHTML = obj["tipo_respuesta"];
                     document.getElementById("codigo_respuesta").innerHTML = obj["codigo_respuesta"];
                     document.getElementById("mensaje_respuesta").innerHTML = obj["mensaje_respuesta"];
                     document.getElementById("mensaje_respuesta_usuario").innerHTML = obj["mensaje_respuesta_usuario"];
@@ -338,6 +330,7 @@
                     document.getElementById("nombre_tarjetahab").innerHTML = obj["nombre_tarjeta_habiente"];
                     document.getElementById("apellido_tarjetahab").innerHTML = obj["apellido_tarjeta_habiente"];
 
+                    checkout.cerrar();
 
                     $("#btn_reinicio").show();
 
