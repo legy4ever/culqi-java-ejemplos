@@ -179,11 +179,11 @@ Ticket | ticket | Ticket de la transacción. | AN
 
 `AN = Alfanumérico` 
 
->En la creación de una venta, el parámetro ***"codigo_respuesta"*** puede tener los siguientes valores.:
+En la creación de una venta, el parámetro ***"codigo_respuesta"*** puede tener los siguientes valores.:
 
 | Código Respuesta |	Descripción |
 | ---------------- | ------------ |
-| venta_registrada | 	Se han validado y registrado los datos de una venta de manera exitosa |
+| **venta_registrada** | 	Se han validado y registrado los datos de una venta de manera exitosa |
 | comercio_invalido |	El comercio no está en condiciones de iniciar una venta |
 | parametro_invalido |	Los valores de los parametros utilizados son erróneos o no tienen validez |
 | error_procesamiento |	Ha ocurrido un error mientras CULQI procesaba la transacción |
@@ -272,7 +272,7 @@ data: JSON.stringify(
 success: function(data){
 var obj = JSON.parse(data);
 var respuesta_venta = obj["codigo_respuesta"];
-if (respuesta_venta == "AUT0000") {
+if (respuesta_venta == "venta_exitosa") {
 checkout.cerrar();
 } else {
 // Brindale un mensaje amigable al cliente (Puedes usar el mensaje que Culqi recomienda o usar uno tuyo) e invitalo a reintentar la compra.
@@ -353,7 +353,7 @@ País Tarjeta | pais_tarjeta | País de origen de la tarjeta usada para realizar
 
 `AN = Alfanumérico` 
 
->En la autorización de una venta, el parámetro ***"codigo_respuesta"*** puede tener los siguientes valores.:
+En la autorización de una venta, el parámetro ***"codigo_respuesta"*** puede tener los siguientes valores.:
 
 | Código Respuesta |	Descripción |
 | ---------------- | ------------ |
@@ -369,7 +369,6 @@ País Tarjeta | pais_tarjeta | País de origen de la tarjeta usada para realizar
 | tarjeta_perdida |	La tarjeta ha sido reportada como perdida |
 | tarjeta_robada |	La tarjeta ha sido reportada como robada |
 | tarjeta_vencida |	La tarjeta está vencida |
-| devolucion_exitosa |	Se ha realizado la devolución de una venta de manera exitosa |
 
 
 > Almacena estos datos por cada petición que realices, y considera que los reintentos esta relacionado al mismo número de pedido, por ello usamos el parámetro de código de referencia.
@@ -427,8 +426,6 @@ Código de Comercio | codigo_comercio | El código del comercio en Culqi. | AN
 Número de Pedido | numero_pedido | El número de pedido de tu venta. | AN
 Ticket | ticket | El ticket de la transacción. | AN
 Estado de Transacción | estado_transaccion | El estado de la transacción. | AN
-Código de Respuesta | codigo_respuesta | El código de la respuesta. | AN
-Mensaje de Respuesta | mensaje_respuesta | El mensaje de respuesta. | AN
 
 ## Operación de Anulación de una venta
 
@@ -480,4 +477,12 @@ numero_pedido | AN | El número de pedido de tu venta.
 ticket | AN | El código de la transacción.
 codigo_respuesta | AN | El código de la respuesta.
 mensaje_respuesta | AN | El mensaje de respuesta.
+
+En la autorización de una venta, el parámetro ***"codigo_respuesta"*** puede tener los siguientes valores.:
+
+| Código Respuesta |	Descripción |
+| ---------------- | ------------ |
+| error_procesamiento |	Ha ocurrido un error mientras CULQI procesaba la transacción |
+| **devolucion_exitosa** |	Se ha realizado la devolución de una venta de manera exitosa |
+
 
