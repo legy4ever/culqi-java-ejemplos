@@ -175,10 +175,18 @@ Código de Comercio | codigo_comercio | Código del comercio en Culqi. | AN
 Número de Pedido | numero_pedido | Número de pedido de la venta. | AN
 Código de Respuesta | codigo_respuesta | Código de la respuesta. | AN
 Mensaje de Respuesta | mensaje_respuesta | Mensaje de respuesta al desarrollador. | AN
-Mensaje de Respuesta Usuario | mensaje_respuesta_usuario | Mensaje de respuesta que se recomienda mostrar al usuario. | AN
 Ticket | ticket | Ticket de la transacción. | AN
 
 `AN = Alfanumérico` 
+
+>En la creación de una venta, el parámetro ***"codigo_respuesta"*** puede tener los siguientes valores.:
+
+| Código Respuesta |	Descripción |
+| ---------------- | ------------ |
+| venta_registrada | 	Se han validado y registrado los datos de una venta de manera exitosa |
+| comercio_invalido |	El comercio no está en condiciones de iniciar una venta |
+| parametro_invalido |	Los valores de los parametros utilizados son erróneos o no tienen validez |
+| error_procesamiento |	Ha ocurrido un error mientras CULQI procesaba la transacción |
 
 > El parámetro "PARAM_INFO_VENTA" contenido en la respuesta del servidor de Culqi, debe de ser usado para configurar el Botón de Pago Web en la página del comercio como siguiente paso, ya que asi se inicia la solicitud de los datos de la tarjeta al cliente.
 
@@ -344,6 +352,25 @@ Emisor | emisor | Banco emisor de la tarjeta usada para realizar el pago. Es ref
 País Tarjeta | pais_tarjeta | País de origen de la tarjeta usada para realizar el pago. Es referencial. | AN
 
 `AN = Alfanumérico` 
+
+>En la autorización de una venta, el parámetro ***"codigo_respuesta"*** puede tener los siguientes valores.:
+
+| Código Respuesta |	Descripción |
+| ---------------- | ------------ |
+| **venta_exitosa** |	Se ha realizado una venta de manera exitosa |
+| comercio_invalido |	El comercio no está en condiciones de iniciar una venta |
+| parametro_invalido |	Los valores de los parametros utilizados son erróneos o no tienen validez |
+| expiracion_invalida |	La fecha de vencimiento de la tarjeta es inválida |
+| cvv_invalido |	El código de seguridad (CVV) de la tarjeta es inválido |
+| operacion_denegada |	La operacion ha sido denegada por el banco que emitió la tarjeta |
+| fondos_insuficientes |	La tarjeta no dispone de fondos suficientes para realizar la compra |
+| contactar_emisor |	La operacion ha sido denegada por el banco que emitió la tarjeta. Se sugiere que el cliente se comunique con el banco |
+| error_procesamiento |	Ha ocurrido un error mientras CULQI procesaba la transacción |
+| tarjeta_perdida |	La tarjeta ha sido reportada como perdida |
+| tarjeta_robada |	La tarjeta ha sido reportada como robada |
+| tarjeta_vencida |	La tarjeta está vencida |
+| devolucion_exitosa |	Se ha realizado la devolución de una venta de manera exitosa |
+
 
 > Almacena estos datos por cada petición que realices, y considera que los reintentos esta relacionado al mismo número de pedido, por ello usamos el parámetro de código de referencia.
 
