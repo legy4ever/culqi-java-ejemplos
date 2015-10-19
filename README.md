@@ -254,7 +254,7 @@ Es muy importante que entiendas que la variable `codigo_comercio` se encarga de 
 En este punto, debes visualizar el formulario de pago de Culqi. Luego que el cliente ingrese los datos de la tarjeta y se procese la venta, obtendrás como respuesta una cadena de texto, que puedes leer usando la variable `checkout.respuesta` que lo encuentras en el ejemplo de Javascript que se mostró previamente. Este contiene un JSON cifrado y se imprime en el log del navegador web. 
 
 <aside class="error">
-Es de suma importancia que envíes el contenido de la variable "checkout.respuesta" a tus servidores para decrifrarlo usando la librería "culqi.php", ya que la llave no debe ser usada en el navegador web por tu seguridad como comercio.</aside>
+Es de suma importancia que envíes el contenido de la variable "checkout.respuesta" a tus servidores para decrifrarlo usando la librería de Culqi en JAVA, ya que la llave no debe ser usada en el navegador web por tu seguridad como comercio.</aside>
 
 #### Enviando la respuesta a tu servidor
 
