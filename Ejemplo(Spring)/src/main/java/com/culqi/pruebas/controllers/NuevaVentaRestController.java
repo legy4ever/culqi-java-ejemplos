@@ -1,7 +1,6 @@
 
 package com.culqi.pruebas.controllers;
 
-import com.culqi.commons.utils.JsonUtils;
 import com.culqi.pruebas.domain.*;
 import com.culqi.pruebas.domain.Respuesta;
 import com.culqi.sdk.*;
@@ -27,8 +26,9 @@ public class NuevaVentaRestController {
     @ResponseBody @RequestMapping(value = "/respuesta-demo-integracion", method = RequestMethod.POST)
     public String descrifrar(@RequestBody @Valid RespuestaCifrada respuestaCifrada, HttpServletRequest request) {
 
-        Culqi.llaveSecreta = "JlhLlpOB5s1aS6upiioJkmdQ0OYZ6HLS2+/o4iYO2MQ=";
-        Culqi.codigoComercio = "demo";
+        Culqi.llaveSecreta = "demo";
+        Culqi.codigoComercio = "JlhLlpOB5s1aS6upiioJkmdQ0OYZ6HLS2+/o4iYO2MQ=";
+        Culqi.servidorBase = "https://integ-pago.culqi.com";
 
         return Culqi.decifrar(respuestaCifrada.getRespuesta());
     }
@@ -36,14 +36,7 @@ public class NuevaVentaRestController {
     @ResponseBody @RequestMapping(value = "/anular-integracion", method = RequestMethod.POST)
     public String anularDev(@RequestBody @Valid VentaAnular ventaAnular, HttpServletRequest request) {
 
-        Culqi.llaveSecreta = "JlhLlpOB5s1aS6upiioJkmdQ0OYZ6HLS2+/o4iYO2MQ=";
-        Culqi.codigoComercio = "demo";
-
-        Map<String, Object> anulacion = Pago.anular(ventaAnular.getId_transaccion());
-
-        String respuesta = JsonUtils.toJson(anulacion);
-
-        return respuesta;
+        return "";
 
     }
 

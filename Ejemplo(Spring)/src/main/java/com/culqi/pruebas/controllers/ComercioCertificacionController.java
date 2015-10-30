@@ -92,7 +92,7 @@ public class ComercioCertificacionController {
 
         Map<String, Object> respuesta = com.culqi.sdk.Pago.crearDatosPago(params);
 
-        if (respuesta.get("codigo_respuesta").equals("REG0000") ) {
+        if (respuesta.get("codigo_respuesta").equals("venta_registrada") ) {
 
             model.addAttribute("respuesta", respuesta);
 
