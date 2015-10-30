@@ -28,7 +28,6 @@ public class NuevaVentaRestController {
 
         Culqi.llaveSecreta = "demo";
         Culqi.codigoComercio = "JlhLlpOB5s1aS6upiioJkmdQ0OYZ6HLS2+/o4iYO2MQ=";
-        Culqi.servidorBase = "https://integ-pago.culqi.com";
 
         return Culqi.decifrar(respuestaCifrada.getRespuesta());
     }
