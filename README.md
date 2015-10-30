@@ -17,6 +17,7 @@ Para que la aplicación o proyecto que estes desarrollando pueda utilizar el Bot
 
 * [Gson](http://search.maven.org/#artifactdetails%7Ccom.google.code.gson%7Cgson%7C2.3.1%7Cjar)
 * [Bouncy Castle](https://www.bouncycastle.org/latest_releases.html)
+* Java 6+
 
 ## Instalación
 
