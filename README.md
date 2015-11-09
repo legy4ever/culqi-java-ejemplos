@@ -290,6 +290,10 @@ error:function( ){
 Una vez recibida la respuesta, puedes decifrarla utilizando la librería Java.
 
 ```java
+
+...
+import com.culqi.sdk.rest.RestConsumer;
+
 /**
 * Ejemplo de descifrado de una respuesta de transacción
 */
@@ -299,40 +303,42 @@ Culqi.codigoComercio = "demo";
 Culqi.servidorBase = "https://integ-ago.culqi.com";
 
 //Retorna el JSON Descifrado
-Map<String, Object> respuesta = Culqi.decifrar("checkout.respuesta");
+String respuesta_descfirada = Culqi.decifrar("<checkout.respuesta>");
+
+Map<String, Object> respuesta = RestConsumer.gson.fromJson(respuesta_descfirada, Map.class);
 
 //Codigo del comercio
-System.out.println("Código Comercio" + respuesta("codigo_comercio"));
+System.out.println("Código Comercio" + respuesta.get("codigo_comercio"));
 
 //Número de pedido
-System.out.println("Número de pedido" + respuesta("numero_pedido"));
+System.out.println("Número de pedido" + respuesta.get("numero_pedido"));
 
 //Código de respuesta
-System.out.println("Código Respuesta" + respuesta("codigo_respuesta"));
+System.out.println("Código Respuesta" + respuesta.get("codigo_respuesta"));
 
 //Mensaje de respuesta
-System.out.println("Mensaje Respuesta" + respuesta("mensaje_respuesta"));
+System.out.println("Mensaje Respuesta" + respuesta.get("mensaje_respuesta"));
 
 //Mensaje de respuesta
-System.out.println("Mensaje Respuesta" + respuesta("mensaje_respuesta_usuario"));
+System.out.println("Mensaje Respuesta" + respuesta.get("mensaje_respuesta_usuario"));
 
 //ID de la Transacción
-System.out.println("ID Transacción" + respuesta("id_transaccion"));
+System.out.println("ID Transacción" + respuesta.get("id_transaccion"));
 
 //Código de referencia
-System.out.println("Código Referencia" + respuesta("codigo_referencia"));
+System.out.println("Código Referencia" + respuesta.get("codigo_referencia"));
 
 //Código de autorización
-System.out.println("Código Autorización" + respuesta("codigo_autorizacion"));
+System.out.println("Código Autorización" + respuesta.get("codigo_autorizacion"));
 
 //Marca de la tarjeta
-System.out.println("Marca" + respuesta("marca"));
+System.out.println("Marca" + respuesta.get("marca"));
 
 //Emisor de la tarjeta
-System.out.println("Emisor" + respuesta("emisor"));
+System.out.println("Emisor" + respuesta.get("emisor"));
 
 //País de la tarjeta
-System.out.println("País Tarjeta" + respuesta("pais_tarjeta"));
+System.out.println("País Tarjeta" + respuesta.get("pais_tarjeta"));
 
 }
 ```
