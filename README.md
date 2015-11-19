@@ -38,20 +38,18 @@ Adicionalmente, se podrá realizar las siguientes operaciones:
 
 ##2. Requerimientos
 
-Para que la aplicación o proyecto que estes desarrollando pueda utilizar el Botón de Pago Web de Culqi, debes instalar lo siguiente:
+Para que la aplicación o proyecto que estes desarrollando pueda utilizar el Botón de Pago Web de Culqi, debes usar las siguientes librerías:
 
-* PHP 5.3.3 o posterior.
-* [Mcrypt](http://php.net/manual/es/book.mcrypt.php)
-* [CURL](http://php.net/manual/es/book.curl.php)
-* [Ctype](http://php.net/manual/es/book.ctype.php)
-
+* Java 6+
+* [BouncyCastle](http://mvnrepository.com/artifact/org.bouncycastle)
+* [GSON](http://mvnrepository.com/artifact/com.google.code.gson/gson)
 
 ##3. Instalación
 
-> Culqi ha desarrollado una libreria en PHP para simplificar la implementación del Botón de Pago Web en tu aplicación o proyecto. Puedes descargar la última versión de la librería de PHP e importarla a tu proyecto:
+> Culqi ha desarrollado una libreria en Java para simplificar la implementación del Botón de Pago Web en tu aplicación o proyecto. Puedes descargar la última versión de la librería de Java e importarla a tu proyecto:
 
-```php
-require 'culqi.php';
+```java
+import com.culqi.sdk.*;
 ```
 
 ##4. Comercio de prueba
@@ -80,12 +78,12 @@ Si necesitas alguna ayuda u orientación, puedes comunicarte con nosotros vía e
 
 Para empezar debes de configurar la librería en tu proyecto e iniciar las variables con los datos del "Comercio Demo":
 
-```php
-<?php$
-Culqi::$codigoComercio = "demo";
-Culqi::$llaveSecreta = "JlhLlpOB5s1aS6upiioJkmdQ0OYZ6HLS2+/o4iYO2MQ=";
-Culqi::$servidorBase = 'https://integ-pago.culqi.com';
-?>
+```java
+
+Culqi.llaveSecreta = "JlhLlpOB5s1aS6upiioJkmdQ0OYZ6HLS2+/o4iYO2MQ=";
+Culqi.codigoComercio = "demo";
+Culqi.servidorBase = "https://integ-pago.culqi.com";
+
 ```
 
 > Los valores de las variables "llave_secreta" y "codigo_comercio" son los provistos para el "Comercio Demo". Cuando obtengas los valores de esas variables de tu comercio que debes solicitar a Culqi, solo reemplázalos. El valor de la variable "servidorBase", esta apuntando por defecto al Entorno de Integración de Culqi.
@@ -291,7 +289,7 @@ Es muy importante que entiendas que la variable `codigo_comercio` se encarga de 
 En este punto, debes visualizar el formulario de pago de Culqi. Luego que el cliente ingrese los datos de la tarjeta y se procese la venta, obtendrás como respuesta una cadena de texto, que puedes leer usando la variable `checkout.respuesta` que lo encuentras en el ejemplo de Javascript que se mostró previamente. Este contiene un JSON cifrado y se imprime en el log del navegador web. 
 
 <aside class="error">
-Es de suma importancia que envíes el contenido de la variable "checkout.respuesta" a tus servidores para decrifrarlo usando la librería "culqi.php", ya que la llave no debe ser usada en el navegador web por tu seguridad como comercio.</aside>
+Es de suma importancia que envíes el contenido de la variable "checkout.respuesta" a tus servidores para decrifrarlo usando la librería Culqi en Java, ya que la llave no debe ser usada en el navegador web por tu seguridad como comercio.</aside>
 
 ####b. Enviando la respuesta a tu servidor
 
@@ -299,7 +297,7 @@ Una vez que obtengas la respuesta de Culqi en tu página web es necesario que la
 
 ```javascript
 $.ajax({
-            url: "/respuesta.php",
+            url: "/respuesta",
             type: "POST",
             contentType: "application/json",
             data: JSON.stringify(
@@ -323,7 +321,7 @@ $.ajax({
 
 ####c. Descrifrando la respuesta
 
-Una vez recibida la respuesta, puedes decifrarla utilizando la librería PHP.
+Una vez recibida la respuesta, puedes decifrarla utilizando la librería Java.
 
 ```java
 
