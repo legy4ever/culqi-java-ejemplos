@@ -41,8 +41,8 @@ Adicionalmente, se podrá realizar las siguientes operaciones:
 Para que la aplicación o proyecto que estes desarrollando pueda utilizar el Botón de Pago Web de Culqi, debes usar las siguientes librerías:
 
 * Java 6+
-* [BouncyCastle](http://mvnrepository.com/artifact/org.bouncycastle)
-* [GSON](http://mvnrepository.com/artifact/com.google.code.gson/gson)
+* [BouncyCastle 1.52](http://mvnrepository.com/artifact/org.bouncycastle)
+* [GSON 2.3.1](http://mvnrepository.com/artifact/com.google.code.gson/gson)
 
 ##3. Instalación
 
