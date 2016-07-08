@@ -1,0 +1,11 @@
+server:
+    port: 8080
+
+culqi-suscripciones:
+    modulo-pago:
+        base-url: http://192.168.1.26:8001
+
+logging:
+    level:
+        com.culqi: INFO
+    file: C:/Users/admin_InSolutions/Desktop/Culqi/EJemplo10/archivo.log
