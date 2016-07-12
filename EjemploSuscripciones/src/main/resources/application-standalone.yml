@@ -1,11 +1,12 @@
 server:
-    port: 8080
-
-culqi-suscripciones:
-    modulo-pago:
-        base-url: http://192.168.1.26:8001
+    port: 8003
 
 logging:
     level:
-        com.culqi: INFO
-    file: C:/Users/admin_InSolutions/Desktop/Culqi/EJemplo10/archivo.log
+        com.culqi: DEBUG
+        # org.springframework: WARN
+        # org.springframework.web.client: DEBUG
+
+culqi:
+    url:
+        mod_pago: https://integ-pago.culqi.com/api/v1/suscripciones

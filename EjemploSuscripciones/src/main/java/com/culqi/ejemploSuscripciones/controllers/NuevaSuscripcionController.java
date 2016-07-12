@@ -60,7 +60,7 @@ public class NuevaSuscripcionController {
 
             responseSuscripcion = restTemplateSuscripcion.exchange(URLModuloPago, HttpMethod.POST, entity, String.class);
 
-            log.info("Respuesta de la creación de la Suscripcion: " + responseSuscripcion.toString());
+            log.info("Respuesta de la creacion de la Suscripcion: " + responseSuscripcion.toString());
 
             HashMap<String, Object> respuestaPlan = new HashMap<>();
             respuestaPlan.put("respuesta", "Suscripcion creada exitosamente.");

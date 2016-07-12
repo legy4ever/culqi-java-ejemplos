@@ -1,11 +1,18 @@
-server:
-    port: 8002
+spring:
+    profiles:
+         active: standalone
+#        active: deployed
+    main:
+        show_banner: false
+    view:
+        prefix: /WEB-INF/views/
+        suffix: .jsp
 
 logging:
     level:
-        com.culqi: DEBUG
-        # org.springframework: WARN
-        org.springframework.web.client: DEBUG
-culqi:
-    url:
-        mod_pago: https://integ-pago.culqi.com/api/v1/suscripciones
+        #com.culqi: DEBUG
+        #org.springframework: WARN
+        #org.apache: WARN
+        #org.hibernate: WARN
+jsse:
+    enableSNIExtension: false
