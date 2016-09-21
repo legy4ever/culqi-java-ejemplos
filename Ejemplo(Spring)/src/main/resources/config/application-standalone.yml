@@ -1,5 +1,5 @@
 server:
-    port: 8002
+    port: 8001
 
 logging:
     level:
@@ -8,5 +8,11 @@ logging:
         org.springframework.web.client: DEBUG
 culqi:
     url:
-        mod_pago: http://192.168.1.99:8001
+        mod_pago: https://integ-pago.culqi.com
+        mod_pago_integ: https://integ-pago.culqi.com
+        mod_pago_cargos: https://integ-pago.culqi.com/api/v1/cargos
+        mod_suscripciones: https://integ-pago.culqi.com/ejemplo-suscripcion
+    config:
+        codigoComercio: test_FpSiSoyFpGzG
+        llaveSecreta: eLHsrNFGp0PCnHfSMmW4DmgcYrylYkOVqufX5apTiUg=
 

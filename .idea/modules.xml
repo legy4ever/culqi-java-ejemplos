@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Ejemplo(Spring)/comercio-prueba.iml" filepath="$PROJECT_DIR$/Ejemplo(Spring)/comercio-prueba.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ejemplos/comercio-prueba (1).iml" filepath="$PROJECT_DIR$/Ejemplos/comercio-prueba (1).iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/culqi-java.iml" filepath="$PROJECT_DIR$/.idea/culqi-java.iml" />
     </modules>
   </component>

@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <title>Comercio Certificacion</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://integ-pago.culqi.com/culqi.js"></script>
+    <script src="https://integ-pago.culqi.com/api/v1/culqi.js"></script>
 
     <style>
         #t_anulacion {
@@ -276,12 +276,12 @@
 
                 console.log(respuesta_venta);
 
-                if (tipo_respuesta_venta == "venta_exitosa") {
+                if (respuesta_venta == "venta_exitosa") {
                     //checkout.autorizado();
                     token = obj["ticket"];
 
                     document.getElementById("codigo_comercio").innerHTML = obj["codigo_comercio"];
-                    document.getElementById("nro_pedido").innerHTML = obj["numero_pedido"];
+                    document.getElementById("numero_pedido").innerHTML = obj["numero_pedido"];
 
                     document.getElementById("codigo_respuesta").innerHTML = obj["codigo_respuesta"];
                     document.getElementById("mensaje_respuesta").innerHTML = obj["mensaje_respuesta"];
@@ -312,7 +312,7 @@
                 } else {
 
                     document.getElementById("codigo_comercio").innerHTML = obj["codigo_comercio"];
-                    document.getElementById("nro_pedido").innerHTML = obj["numero_pedido"];
+                    document.getElementById("numero_pedido").innerHTML = obj["numero_pedido"];
 
                     document.getElementById("codigo_respuesta").innerHTML = obj["codigo_respuesta"];
                     document.getElementById("mensaje_respuesta").innerHTML = obj["mensaje_respuesta"];

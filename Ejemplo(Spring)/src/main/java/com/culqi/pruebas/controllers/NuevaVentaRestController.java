@@ -23,11 +23,17 @@ public class NuevaVentaRestController {
     @Value("${culqi.url.mod_pago}")
     private String URLModuloPago;
 
+    @Value("${culqi.config.llaveSecreta}")
+    private String llaveSecreta;
+
+    @Value("${culqi.config.codigoComercio}")
+    private String codigoComercio;
+
     @ResponseBody @RequestMapping(value = "/respuesta-demo-integracion", method = RequestMethod.POST)
     public String descrifrar(@RequestBody @Valid RespuestaCifrada respuestaCifrada, HttpServletRequest request) {
 
-        Culqi.llaveSecreta = "demo";
-        Culqi.codigoComercio = "JlhLlpOB5s1aS6upiioJkmdQ0OYZ6HLS2+/o4iYO2MQ=";
+        Culqi.llaveSecreta = llaveSecreta;
+        Culqi.codigoComercio = codigoComercio;
 
         return Culqi.decifrar(respuestaCifrada.getRespuesta());
     }
